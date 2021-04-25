@@ -1,4 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont, ImageColor
+from imgur import post_image
 
 # Constants
 dark_bg = ImageColor.getrgb("#36393f")
@@ -15,7 +16,7 @@ width, height = dark_fly.size
 dark_fly.resize((width*2, height*2))
 
 # Create new background
-background = Image.new('RGB', (1000, 102), color=dark_bg)
+background = Image.new('RGB', (1000, 105), color=dark_bg)
 d = ImageDraw.Draw(background)
 # Overlay the text
 d.text((0, 0), message1, font=whitney, fill=dark_text)
@@ -25,5 +26,11 @@ d.text((0, 60), message2, font=whitney, fill=dark_text)
 # third param used to indicate transparency mask
 offset = (800, 0)
 background.paste(dark_fly.resize((width*2, height*2)), offset)
-
-background.save('pil_text_font.png')
+background.save('./output/output.png')
+try:
+    url = post_image('./output/output.png')
+    print(url)
+except Exception as e:
+    print("An error occured while uploading your image")
+    print(e)
+    quit(0)
