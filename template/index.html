@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://getbootstrap.com/docs/4.0/examples/cover/# -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script
+      src="https://kit.fontawesome.com/aceffe1978.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link
+      rel="icon"
+      href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon.ico"
+    />
+
+    <title>Discord Fly Prank</title>
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/4.0/examples/cover/"
+    />
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/cover.css" rel="stylesheet" />
+  </head>
+
+  <body class="text-center">
+            
+    <div class="cover-container d-flex h-100 p-1 mx-auto flex-column">
+      <!-- <div class="row">
+
+      </div> -->
+
+      <header class="masthead mb-auto">
+        <div class="inner">
+                 <div class="alert alert-dark mt-2" role="alert">
+  Type your text to show as a message and an image URL will be generated with a fly placed on it!
+   <hr>
+  Note: the prank does not work well for users on mobile, support coming soon!
+</div>
+
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <h3 class="cover-heading">Discord Fly Prank Generator</h3>
+        <div class="row justify-content-center">
+          <form action="" method="get">
+            <div class="row ">
+              <div class="col-md">
+                <p>Message Line 1</p>
+                <input type="text" placeholder="Text 1" name="message1" />
+              </div>
+              <div class="col-md">
+                <p>Message Line 2</p>
+                <input type="text" placeholder="Text 2" name="message2" />
+              </div>
+            </div>
+
+            <input type="submit" class="btn btn-light mt-3" value="Generate" />
+          </form>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col">
+            <div class="input-group input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default"
+                  >Link</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                id="link-content"
+                aria-describedby="inputGroup-sizing-default"
+                value="{{ link }}"
+              />
+              <button onclick="clipboard()" class="btn btn-light" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">Copy text</button>
+            </div>
+          </div>
+        </div>
+
+        <p class="lead">
+          <a
+            href="https://github.com/amirmaula/discord-prank"
+            class="btn btn-sm btn-secondary mt-5"
+            ><i class="fab fa-github mr-2"></i>View on GitHub</a
+          >
+        </p>
+      </main>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script
+      src="static/js/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="./assets/js/vendor/jquery-slim.min.js"><\/script>'
+        );
+    </script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/clipboard.js"></script>
+    <script>$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})</script>
+  </body>
+</html>

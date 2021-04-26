@@ -1,11 +1,10 @@
-from flask import Flask, request
-
+from flask import Flask, request, render_template
 import image_gen
 import random
 from pathlib import Path
 
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='template')
 
 @app.route("/")
 def index():
@@ -17,25 +16,15 @@ def index():
     else:
         # html = ''
         link = ''
-    return ("""<form action="" method="get">
-                    <p>Message 1</p>
-                    <input type="text" name="message1">
-                    <p>Message 2</p>
-                    <input type="text" name="message2">
-                    <input type="submit" value="Generate">
-                  </form>"""
-    + link)
-
-# @app.route("/<string:message1>,<string:message2>")
-# def generate(message1='message1', message2='message2!'):
-#     # message2 = request.args.get('message2', None)
-#     # prank = request.args.get('prank', None)
-#     # color_scheme = request.args.get('color_scheme', None)
-#     # link = image_gen.generate_image(message1=message1, message2=message2, prank='fly', color_scheme='dark')
-#     link = image_gen.generate_image(message1=message1, message2=message2)
-#     html = ("<a href=%s>%s</a>" % (link,link))
-#     # print(html)
-#     return html
+    return render_template('index.html', link=link)
+    # return ("""<form action="" method="get">
+    #                 <p>Message 1</p>
+    #                 <input type="text" name="message1">
+    #                 <p>Message 2</p>
+    #                 <input type="text" name="message2">
+    #                 <input type="submit" value="Generate">
+    #               </form>"""
+    # + link)
 
 
 if __name__ == "__main__":

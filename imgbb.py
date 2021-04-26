@@ -15,7 +15,7 @@ def post_image(img_path):
 
     }
     response = requests.request("POST", url, data=data)
-    print(json.dumps(response.json(), indent=4))
+    # print(json.dumps(response.json(), indent=4))
     if response.status_code == 200:
         return response.json()['data']['display_url']
     else:
