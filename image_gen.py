@@ -17,7 +17,7 @@ dark_fly.resize((width*2, height*2))
 def generate_image(message1='Hello world!', message2='Hello from mars!', prank=fly, color_scheme='dark'):
     try:
         # Create new background
-        background = Image.new('RGB', (1000, 110), color=dark_bg)
+        background = Image.new('RGB', (1000, 115), color=dark_bg)
         d = ImageDraw.Draw(background)
         # Overlay the text
         d.text((0, 0), message1, font=whitney, fill=dark_text)
