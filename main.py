@@ -3,6 +3,8 @@ import image_gen
 import random
 from pathlib import Path
 from replit import db
+import logging
+    
 
 
 app = Flask(__name__, template_folder='template')
@@ -25,7 +27,9 @@ def index():
 
 if __name__ == "__main__":
   Path("./output/").mkdir(parents=True, exist_ok=True)
+  logging.basicConfig(filename='info.log',level=logging.INFO)
   app.run(
 		host='0.0.0.0',
-		port=random.randint(2000, 9000)
+		port=random.randint(2000, 9000),
+    debug=False
 	)
