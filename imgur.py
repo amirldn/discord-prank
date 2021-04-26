@@ -1,10 +1,9 @@
+import os
 from base64 import b64encode
 
-import requests, configparser, json
-config = configparser.ConfigParser()
-config.read('./private.ini')
-client_id = config['imgur']['client_id']
-client_secret = config['imgur']['client_secret']
+import requests, json
+client_id = os.environ['client_id']
+client_secret = os.environ['client_secret']
 
 url = "https://api.imgur.com/3/image"
 headers = {

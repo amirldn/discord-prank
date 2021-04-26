@@ -1,7 +1,9 @@
-from flask import Flask, request, escape
+from flask import Flask, request
 
 import image_gen
-from image_gen import *
+import random
+from pathlib import Path
+
 
 app = Flask(__name__)
 
@@ -11,9 +13,10 @@ def index():
     message2 = request.args.get("message2", "")
     if message1:
         link = image_gen.generate_image(message1=message1, message2=message2, prank='fly', color_scheme='dark')
-        html = ("<a href=%s>%s</a>" % (link, link))
+        # html = ("<a href=%s>%s</a>" % (link, link))
     else:
-        html = ''
+        # html = ''
+        link = ''
     return ("""<form action="" method="get">
                     <p>Message 1</p>
                     <input type="text" name="message1">
@@ -21,7 +24,7 @@ def index():
                     <input type="text" name="message2">
                     <input type="submit" value="Generate">
                   </form>"""
-    + html)
+    + link)
 
 # @app.route("/<string:message1>,<string:message2>")
 # def generate(message1='message1', message2='message2!'):
@@ -36,4 +39,8 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8080, debug=True)
+  Path("./output/").mkdir(parents=True, exist_ok=True)
+  app.run(
+		host='0.0.0.0',  # EStablishes the host, required for repl to detect the site
+		port=random.randint(2000, 9000)  # Randomly select the port the machine hosts on.
+	)
