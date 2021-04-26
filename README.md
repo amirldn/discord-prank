@@ -4,7 +4,7 @@
 Discord Fly Prank Generator
 
 Hosted online via Repl.it:
-**https://discord-prank.amirmaula1.repl.co**
+**https://prank.codes**
  
 Powered by imgbb API.
 
