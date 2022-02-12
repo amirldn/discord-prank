@@ -5,12 +5,12 @@ import os
 # Constants
 dark_bg = ImageColor.getrgb("#36393f")
 dark_text = ImageColor.getrgb("#dcddde")
-whitney = ImageFont.truetype('./whitney/whitneymedium.otf', 40) #16
+whitney = ImageFont.truetype('./assets/fonts/whitney/whitneymedium.otf', 40) #16
 
-fly = Image.open('./pranks/fly.png')
+fly = Image.open('./assets/pranks/fly.png')
 fly.thumbnail((100, 100),Image.ANTIALIAS)
 
-dark_fly = Image.open('./pranks/dark_fly.jpg')
+dark_fly = Image.open('./assets/pranks/dark_fly.jpg')
 width, height = dark_fly.size
 dark_fly.resize((width*2, height*2))
 
