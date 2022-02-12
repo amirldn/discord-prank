@@ -1,9 +1,9 @@
 import os
+from replit import db
 from base64 import b64encode
 
 import requests, json
-api_key = os.environ['imgbb']
-
+api_key = db["imgbb_api_key"]
 url = "https://api.imgbb.com/1/upload"
 
 
