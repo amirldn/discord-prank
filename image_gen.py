@@ -1,5 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont, ImageColor
-from imgbb import post_image
+from image_hosts.imgur import post_image
 import os
 
 # Constants

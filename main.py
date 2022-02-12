@@ -7,6 +7,7 @@ from replit import db
 import logging
     
 
+print("Saved client_id")
 
 app = Flask(__name__, template_folder='template')
 count = int(db["gen_count"])
