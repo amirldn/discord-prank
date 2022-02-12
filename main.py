@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 import image_gen
-import random
+# import random
+from random import randint
 from pathlib import Path
 from replit import db
 import logging
@@ -30,6 +31,6 @@ if __name__ == "__main__":
   logging.basicConfig(filename='info.log',level=logging.INFO)
   app.run(
 		host='0.0.0.0',
-		port=random.randint(2000, 9000),
+		port=randint(2000, 9000),
     debug=False
 	)
